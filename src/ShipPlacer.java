@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ShipPlacer
@@ -25,24 +26,7 @@ public class ShipPlacer
 
     public void place()
     {
-        boolean horizVert = horizontalVertical();
-        int spaceCounter = 0;
 
-        if(horizVert)
-        {
-            int rowNum = gen.nextInt(10);
-
-            for(int col = 0; col < 10; col++)
-            {
-                if(board.getBoard()[rowNum][col] == 0)
-                {
-                    spaceCounter++;
-                }
-                if(spaceCounter >= ship1.getLength())
-            }
-
-
-        }
     }
 
     public boolean horizontalVertical()
@@ -59,5 +43,59 @@ public class ShipPlacer
             //false represents vertical
             return false;
         }
+    }
+
+    public ArrayList<Integer> validIndices(Ship ship)
+    {
+        boolean horizVert = horizontalVertical();
+        int spaceCounter = 0;
+        ArrayList<Integer> validIndices = new ArrayList<Integer>();
+
+        if(horizVert)
+        {
+            int rowNum = gen.nextInt(10);
+
+            for(int col = 0; col <= 11 - ship.getLength(); col++)
+            {
+                spaceCounter = 0;
+                if(board.getBoard()[rowNum][col] == 0)
+                {
+                    for(int consecCol = col; consecCol < col + ship.getLength(); consecCol++)
+                    {
+                        if(board.getBoard()[rowNum][consecCol] == 0)
+                        {
+                            spaceCounter++;
+                        }
+                    }
+                    if(spaceCounter == ship.getLength())
+                    {
+                        validIndices.add(col);
+                    }
+                }
+            }
+        }else
+        {
+            int colNum = gen.nextInt(10);
+
+            for(int row = 0; row <= 11 - ship.getLength(); row++)
+            {
+                spaceCounter = 0;
+                if(board.getBoard()[row][colNum] == 0)
+                {
+                    for(int consecRow = row; consecRow < row + ship.getLength(); consecRow++)
+                    {
+                        if(board.getBoard()[consecRow][colNum] == 0)
+                        {
+                            spaceCounter++;
+                        }
+                    }
+                    if(spaceCounter == ship.getLength())
+                    {
+                        validIndices.add(row);
+                    }
+                }
+            }
+        }
+        return validIndices;
     }
 }
