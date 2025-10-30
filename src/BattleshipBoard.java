@@ -2,15 +2,15 @@ public class BattleshipBoard
 {
     private static final int ROW = 10;
     private static final int COL = 10;
-    private String[][] board;
+    private int[][] board;
 
     public BattleshipBoard()
     {
-        board = new String[ROW][COL];
+        board = new int[ROW][COL];
         clearBoard();
     }
 
-    public String[][] getBoard() {
+    public int[][] getBoard() {
         return board;
     }
 
@@ -20,7 +20,7 @@ public class BattleshipBoard
         {
             for(int col = 0; col < COL; col++)
             {
-                board[row][col] = " ";
+                board[row][col] = 0;
             }
         }
     }
