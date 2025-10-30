@@ -20,6 +20,7 @@ public class BattleshipBoard
         {
             for(int col = 0; col < COL; col++)
             {
+                //0 will represent blank cell, 1 will represent full
                 board[row][col] = 0;
             }
         }
