@@ -18,8 +18,6 @@ public class ShipPlacer
         ArrayList<Integer> possiblePlacements;
         int attempts = 0;
 
-        do
-        {
             if (horizVert1) {
                 int rowNum;
 
@@ -57,11 +55,6 @@ public class ShipPlacer
                     board.setIndex(row, colNum, ship.getLength());
                 }
             }
-        } while (attempts < 200);
-        if (attempts >= 200)
-        {
-            board.clearBoard();
-        }
     }
 
     public boolean isHorizontal()

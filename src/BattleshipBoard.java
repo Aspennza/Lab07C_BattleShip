@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class BattleshipBoard
 {
     private static final int ROW = 10;
@@ -29,5 +31,12 @@ public class BattleshipBoard
     public void setIndex(int row, int col, int shipNum)
     {
         board[row][col] = shipNum;
+    }
+
+    @Override
+    public String toString() {
+        return "BattleshipBoard{" +
+                "board=" + Arrays.toString(board) +
+                '}';
     }
 }
