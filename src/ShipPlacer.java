@@ -5,31 +5,66 @@ public class ShipPlacer
 {
     BattleshipBoard board;
     Random gen;
-    Ship ship1;
-    Ship ship2;
-    Ship ship3;
-    Ship ship4;
-    Ship ship5;
 
     public ShipPlacer(BattleshipBoard board)
     {
         this.board = board;
         gen = new Random();
-        ship1 = new Ship(5);
-        ship2 = new Ship(4);
-        ship3 = new Ship(3);
-        ship4 = new Ship(3);
-        ship5 = new Ship(2);
-
-
     }
 
-    public void place()
+    public void placeShip(Ship ship)
     {
+        boolean horizVert1 = isHorizontal();
+        ArrayList<Integer> possiblePlacements;
+        int attempts = 0;
 
+        do
+        {
+            if (horizVert1) {
+                int rowNum;
+
+                do {
+                    rowNum = gen.nextInt(10);
+                    possiblePlacements = validIndices(ship, horizVert1, rowNum);
+                    attempts++;
+                    if (attempts > 100) {
+                        horizVert1 = !horizVert1;
+                    }
+                } while (possiblePlacements.isEmpty());
+
+                int arrayIndex = gen.nextInt(possiblePlacements.size());
+                int colNum = possiblePlacements.get(arrayIndex);
+
+                for (int col = colNum; col < colNum + ship.getLength(); col++) {
+                    board.setIndex(rowNum, col, ship.getLength());
+                }
+            } else {
+                int colNum;
+
+                do {
+                    colNum = gen.nextInt(10);
+                    possiblePlacements = validIndices(ship, horizVert1, colNum);
+                    attempts++;
+                    if (attempts > 100) {
+                        horizVert1 = !horizVert1;
+                    }
+                } while (possiblePlacements.isEmpty());
+
+                int arrayIndex = gen.nextInt(possiblePlacements.size());
+                int rowNum = possiblePlacements.get(arrayIndex);
+
+                for (int row = rowNum; row < rowNum + ship.getLength(); row++) {
+                    board.setIndex(row, colNum, ship.getLength());
+                }
+            }
+        } while (attempts < 200);
+        if (attempts >= 200)
+        {
+            board.clearBoard();
+        }
     }
 
-    public boolean horizontalVertical()
+    public boolean isHorizontal()
     {
         int randomVal;
 
@@ -45,26 +80,25 @@ public class ShipPlacer
         }
     }
 
-    public ArrayList<Integer> validIndices(Ship ship)
+    public ArrayList<Integer> validIndices(Ship ship, boolean horizVert, int fixedIndex)
     {
-        boolean horizVert = horizontalVertical();
         int spaceCounter = 0;
         ArrayList<Integer> validIndices = new ArrayList<Integer>();
 
         if(horizVert)
         {
-            int rowNum = gen.nextInt(10);
-
-            for(int col = 0; col <= 11 - ship.getLength(); col++)
+            for(int col = 0; col <= 10 - ship.getLength(); col++)
             {
                 spaceCounter = 0;
-                if(board.getBoard()[rowNum][col] == 0)
+                if(board.getBoard()[fixedIndex][col] == 0)
                 {
                     for(int consecCol = col; consecCol < col + ship.getLength(); consecCol++)
                     {
-                        if(board.getBoard()[rowNum][consecCol] == 0)
+                        if(board.getBoard()[fixedIndex][consecCol] == 0)
                         {
                             spaceCounter++;
+                        } else {
+                            break;
                         }
                     }
                     if(spaceCounter == ship.getLength())
@@ -75,18 +109,18 @@ public class ShipPlacer
             }
         }else
         {
-            int colNum = gen.nextInt(10);
-
-            for(int row = 0; row <= 11 - ship.getLength(); row++)
+            for(int row = 0; row <= 10 - ship.getLength(); row++)
             {
                 spaceCounter = 0;
-                if(board.getBoard()[row][colNum] == 0)
+                if(board.getBoard()[row][fixedIndex] == 0)
                 {
                     for(int consecRow = row; consecRow < row + ship.getLength(); consecRow++)
                     {
-                        if(board.getBoard()[consecRow][colNum] == 0)
+                        if(board.getBoard()[consecRow][fixedIndex] == 0)
                         {
                             spaceCounter++;
+                        } else {
+                            break;
                         }
                     }
                     if(spaceCounter == ship.getLength())

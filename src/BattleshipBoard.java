@@ -25,4 +25,9 @@ public class BattleshipBoard
             }
         }
     }
+
+    public void setIndex(int row, int col, int shipNum)
+    {
+        board[row][col] = shipNum;
+    }
 }
