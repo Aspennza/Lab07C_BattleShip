@@ -47,6 +47,7 @@ public class BattleshipButton extends JButton
         miss = false;
         hit = false;
         setIcon(blankIcon);
+        setEnabled(true);
     }
 
     public void isMiss() {
@@ -54,6 +55,7 @@ public class BattleshipButton extends JButton
         blank = false;
         hit = false;
         setIcon(missIcon);
+        setEnabled(false);
     }
 
     public void isHit() {
@@ -61,5 +63,6 @@ public class BattleshipButton extends JButton
         miss = false;
         blank = false;
         setIcon(hitIcon);
+        setEnabled(false);
     }
 }

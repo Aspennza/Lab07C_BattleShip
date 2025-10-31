@@ -58,7 +58,7 @@ public class BoardPnl extends JPanel
         {
             if(ae.getSource() instanceof BattleshipButton selectedButton)
             {
-                //game.buttonAction
+                game.buttonAction(selectedButton.getRow(), selectedButton.getCol());
             }
         }
     }

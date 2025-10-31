@@ -22,7 +22,7 @@ public class BattleshipBoard
         {
             for(int col = 0; col < COL; col++)
             {
-                //0 will represent blank cell, 1 will represent full
+                //0 will represent blank cell, 1 will represent miss, 6 will represent hit
                 board[row][col] = 0;
             }
         }
@@ -31,6 +31,16 @@ public class BattleshipBoard
     public void setIndex(int row, int col, int shipNum)
     {
         board[row][col] = shipNum;
+    }
+
+    public boolean isValidMove(int row, int col)
+    {
+        return board[row][col] == 0;
+    }
+
+    public void setMiss(int row, int col)
+    {
+
     }
 
     @Override
