@@ -35,7 +35,7 @@ public class BattleshipBoard
 
     public boolean isValidMove(int row, int col)
     {
-        return board[row][col] != 1 && board[row][col] != 6;
+        return board[row][col] != 1 && board[row][col] != 6 && board[row][col] != 7 && board[row][col] != 8 && board[row][col] != 9;
     }
 
     public boolean calculateMove(int row, int col)
@@ -45,9 +45,12 @@ public class BattleshipBoard
             board[row][col] = 1;
             //false represents a miss
             return false;
-        } else {
+        } else if(board[row][col] == 2){
             board[row][col] = 6;
             //true represents a hit
+            return true;
+        } else if(board[row][col] == 3) {
+            board[row][col] = 7;
             return true;
         }
     }
