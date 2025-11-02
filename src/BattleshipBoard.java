@@ -52,47 +52,47 @@ public class BattleshipBoard
         } else if(board[row][col] == 3) {
             board[row][col] = 7;
             return true;
+        } else if(board[row][col] == 4) {
+            board[row][col] = 8;
+            return true;
+        } else {
+            board[row][col] = 9;
+            return true;
         }
     }
 
-    public boolean checkIfSunk(Ship ship, int row, int col)
+    public boolean checkIfSunk(int shipNum, int row, int col)
     {
-        int shipNum = checkShipSinkNum(ship);
+            if (board[row][col] != shipNum) {
+                return false;
+            }
+            int consecCounter = 1;
 
-        if(board[row][col] != shipNum)
-        {
-            return false;
-        }
-        int consecCounter = 1;
+            for (int consecCol = col - 1; consecCol >= 0 && board[row][consecCol] == shipNum; consecCol--) {
+                consecCounter++;
+            }
 
-        for(int consecCol = col - 1; consecCol >= 0 && board[row][consecCol] == shipNum; consecCol--)
-        {
-            consecCounter++;
-        }
+            for (int consecCol = col + 1; consecCol < board[row].length && board[row][consecCol] == shipNum; consecCol++) {
+                consecCounter++;
+            }
 
-        for(int consecCol = col + 1; consecCol < board[row].length && board[row][consecCol] == shipNum; consecCol++)
-        {
-            consecCounter++;
-        }
+            if (consecCounter == shipNum) {
+                return true;
+            }
 
-        if(consecCounter == ship.getLength())
-        {
-            return true;
-        }
+            consecCounter = 1;
 
-        consecCounter = 1;
+            for (int consecRow = row - 1; consecRow >= 0 && board[consecRow][col] == shipNum; consecRow--) {
+                consecCounter++;
+            }
 
-        for(int consecRow = row - 1; consecRow >= 0 && board[consecRow][col] == shipNum; consecRow--) {
-            consecCounter++;
-        }
+            for (int consecRow = row + 1; consecRow < board.length && board[consecRow][col] == shipNum; consecRow++) {
+                consecCounter++;
+            }
 
-        for(int consecRow = row + 1; consecRow < board.length && board[consecRow][col] == shipNum; consecRow++) {
-            consecCounter++;
-        }
-
-        if(consecCounter == ship.getLength()) {
-            return true;
-        }
+            if (consecCounter == shipNum) {
+                return true;
+            }
 
         return false;
     }
