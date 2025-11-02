@@ -2,7 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-//Come back to working on the BattleshipGame and BattleshipBoard classes!!!
+//replace the frame with a gridbaglayout!
+//test the program!
+//junit tests!
+//javadoc
+//crc cards
+//uml
 
 public class BattleshipGame
 {
