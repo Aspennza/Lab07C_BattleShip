@@ -4,15 +4,15 @@ public class BattleshipBoard
 {
     private static final int ROW = 10;
     private static final int COL = 10;
-    private int[][] board;
+    private double[][] board;
 
     public BattleshipBoard()
     {
-        board = new int[ROW][COL];
+        board = new double[ROW][COL];
         clearBoard();
     }
 
-    public int[][] getBoard() {
+    public double[][] getBoard() {
         return board;
     }
 
@@ -22,13 +22,13 @@ public class BattleshipBoard
         {
             for(int col = 0; col < COL; col++)
             {
-                //0 will represent blank cell, 1 will represent miss, 6,7,8, and 9 will represent a hit for each ship
+                //0 will represent blank cell, 1 will represent miss, 6,7,8,9, and 10 will represent a hit for each ship
                 board[row][col] = 0;
             }
         }
     }
 
-    public void setIndex(int row, int col, int shipNum)
+    public void setIndex(int row, int col, double shipNum)
     {
         board[row][col] = shipNum;
     }
@@ -55,42 +55,45 @@ public class BattleshipBoard
         } else if(board[row][col] == 4) {
             board[row][col] = 8;
             return true;
-        } else {
+        } else if(board[row][col] == 5){
             board[row][col] = 9;
+            return true;
+        } else {
+            board[row][col] = 10;
             return true;
         }
     }
 
-    public boolean checkIfSunk(int shipNum, int row, int col)
+    public boolean checkIfSunk(double shipLength, int shipHitNum, int row, int col)
     {
-            if (board[row][col] != shipNum) {
+            if (board[row][col] != shipHitNum) {
                 return false;
             }
             int consecCounter = 1;
 
-            for (int consecCol = col - 1; consecCol >= 0 && board[row][consecCol] == shipNum; consecCol--) {
+            for (int consecCol = col - 1; consecCol >= 0 && board[row][consecCol] == shipHitNum && consecCounter < shipLength; consecCol--) {
                 consecCounter++;
             }
 
-            for (int consecCol = col + 1; consecCol < board[row].length && board[row][consecCol] == shipNum; consecCol++) {
+            for (int consecCol = col + 1; consecCol < board[row].length && board[row][consecCol] == shipHitNum && consecCounter < shipLength; consecCol++) {
                 consecCounter++;
             }
 
-            if (consecCounter == shipNum) {
+            if (consecCounter == shipLength) {
                 return true;
             }
 
             consecCounter = 1;
 
-            for (int consecRow = row - 1; consecRow >= 0 && board[consecRow][col] == shipNum; consecRow--) {
+            for (int consecRow = row - 1; consecRow >= 0 && board[consecRow][col] == shipHitNum && consecCounter < shipLength; consecRow--) {
                 consecCounter++;
             }
 
-            for (int consecRow = row + 1; consecRow < board.length && board[consecRow][col] == shipNum; consecRow++) {
+            for (int consecRow = row + 1; consecRow < board.length && board[consecRow][col] == shipHitNum && consecCounter < shipLength; consecRow++) {
                 consecCounter++;
             }
 
-            if (consecCounter == shipNum) {
+            if (consecCounter == shipLength) {
                 return true;
             }
 

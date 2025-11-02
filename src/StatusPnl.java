@@ -22,9 +22,13 @@ public class StatusPnl extends JPanel
         totalMissLbl = new JLabel("Total Misses:");
         totalHitLbl = new JLabel("Total Hits:");
         missTF = new JTextField(15);
+        missTF.setText("" + 0);
         strikeTF = new JTextField(15);
+        strikeTF.setText("" + 0);
         totalMissTF = new JTextField(15);
+        totalMissTF.setText("" + 0);
         totalHitTF = new JTextField(15);
+        totalHitTF.setText("" + 0);
 
         add(missLbl);
         add(missTF);

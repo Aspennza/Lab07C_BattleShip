@@ -34,7 +34,7 @@ public class ShipPlacer
                 int colNum = possiblePlacements.get(arrayIndex);
 
                 for (int col = colNum; col < colNum + ship.getLength(); col++) {
-                    board.setIndex(rowNum, col, ship.getLength());
+                    board.setIndex(rowNum, col, ship.getID());
                 }
             } else {
                 int colNum;
@@ -52,7 +52,7 @@ public class ShipPlacer
                 int rowNum = possiblePlacements.get(arrayIndex);
 
                 for (int row = rowNum; row < rowNum + ship.getLength(); row++) {
-                    board.setIndex(row, colNum, ship.getLength());
+                    board.setIndex(row, colNum, ship.getID());
                 }
             }
     }
