@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-//come back to writing junit tests at ControlPnl!
 //javadoc
 //crc cards
 //uml
