@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Objects;
 
 public class BattleshipBoard
 {
@@ -100,23 +101,22 @@ public class BattleshipBoard
         return false;
     }
 
-    private int checkShipSinkNum(Ship ship)
-    {
-        if(ship.getLength() == 5) {
-            return 9;
-        } else if(ship.getLength() == 4) {
-            return 8;
-        } else if(ship.getLength() == 3) {
-            return 7;
-        } else {
-            return 6;
-        }
-    }
-
     @Override
     public String toString() {
         return "BattleshipBoard{" +
                 "board=" + Arrays.toString(board) +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        BattleshipBoard that = (BattleshipBoard) o;
+        return Objects.deepEquals(board, that.board);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.deepHashCode(board);
     }
 }

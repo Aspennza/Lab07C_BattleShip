@@ -58,16 +58,4 @@ public class ControlPnl extends JPanel
     public BattleshipGame getGame() {
         return game;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        ControlPnl that = (ControlPnl) o;
-        return Objects.equals(playAgainBtn, that.playAgainBtn) && Objects.equals(quitBtn, that.quitBtn) && Objects.equals(game, that.game);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(playAgainBtn, quitBtn, game);
-    }
 }

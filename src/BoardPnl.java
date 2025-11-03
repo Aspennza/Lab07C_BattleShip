@@ -39,18 +39,6 @@ public class BoardPnl extends JPanel
         return game;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        BoardPnl boardPnl = (BoardPnl) o;
-        return Objects.deepEquals(boardGUI, boardPnl.boardGUI) && Objects.equals(listener, boardPnl.listener) && Objects.equals(game, boardPnl.game);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(Arrays.deepHashCode(boardGUI), listener, game);
-    }
-
     private class BattleshipButtonListener implements ActionListener
     {
         @Override

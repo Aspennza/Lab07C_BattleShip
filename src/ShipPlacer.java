@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 public class ShipPlacer
@@ -20,7 +21,6 @@ public class ShipPlacer
 
             if (horizVert1) {
                 int rowNum;
-
                 do {
                     rowNum = gen.nextInt(10);
                     possiblePlacements = validIndices(ship, horizVert1, rowNum);
@@ -124,5 +124,25 @@ public class ShipPlacer
             }
         }
         return validIndices;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        ShipPlacer placer = (ShipPlacer) o;
+        return Objects.equals(board, placer.board) && Objects.equals(gen, placer.gen);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(board, gen);
+    }
+
+    @Override
+    public String toString() {
+        return "ShipPlacer{" +
+                "board=" + board +
+                ", gen=" + gen +
+                '}';
     }
 }

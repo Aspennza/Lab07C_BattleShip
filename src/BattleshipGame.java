@@ -304,11 +304,11 @@ public class BattleshipGame
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         BattleshipGame that = (BattleshipGame) o;
-        return playing == that.playing && misses == that.misses && totalHits == that.totalHits && strikes == that.strikes && totalMisses == that.totalMisses && ship1Sunk == that.ship1Sunk && ship2Sunk == that.ship2Sunk && ship3Sunk == that.ship3Sunk && ship4Sunk == that.ship4Sunk && ship5Sunk == that.ship5Sunk && Objects.equals(frame, that.frame) && Objects.equals(titlePnl, that.titlePnl) && Objects.equals(boardPnl, that.boardPnl) && Objects.equals(statusPnl, that.statusPnl) && Objects.equals(controlPnl, that.controlPnl) && Objects.equals(board, that.board) && Objects.equals(placer, that.placer) && Objects.equals(ship1, that.ship1) && Objects.equals(ship2, that.ship2) && Objects.equals(ship3, that.ship3) && Objects.equals(ship4, that.ship4) && Objects.equals(ship5, that.ship5);
+        return playing == that.playing && misses == that.misses && totalHits == that.totalHits && strikes == that.strikes && totalMisses == that.totalMisses && ship1Sunk == that.ship1Sunk && ship2Sunk == that.ship2Sunk && ship3Sunk == that.ship3Sunk && ship4Sunk == that.ship4Sunk && ship5Sunk == that.ship5Sunk && Objects.equals(board, that.board) && Objects.equals(placer, that.placer) && Objects.equals(ship1, that.ship1) && Objects.equals(ship2, that.ship2) && Objects.equals(ship3, that.ship3) && Objects.equals(ship4, that.ship4) && Objects.equals(ship5, that.ship5);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(frame, titlePnl, boardPnl, statusPnl, controlPnl, board, placer, playing, misses, totalHits, strikes, totalMisses, ship1, ship2, ship3, ship4, ship5, ship1Sunk, ship2Sunk, ship3Sunk, ship4Sunk, ship5Sunk);
+        return Objects.hash(board, placer, playing, misses, totalHits, strikes, totalMisses, ship1, ship2, ship3, ship4, ship5, ship1Sunk, ship2Sunk, ship3Sunk, ship4Sunk, ship5Sunk);
     }
 }

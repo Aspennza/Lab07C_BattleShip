@@ -71,16 +71,4 @@ public class StatusPnl extends JPanel
     public JTextField getTotalHitTF() {
         return totalHitTF;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        StatusPnl statusPnl = (StatusPnl) o;
-        return Objects.equals(missLbl, statusPnl.missLbl) && Objects.equals(strikeLbl, statusPnl.strikeLbl) && Objects.equals(totalMissLbl, statusPnl.totalMissLbl) && Objects.equals(totalHitLbl, statusPnl.totalHitLbl) && Objects.equals(missTF, statusPnl.missTF) && Objects.equals(strikeTF, statusPnl.strikeTF) && Objects.equals(totalMissTF, statusPnl.totalMissTF) && Objects.equals(totalHitTF, statusPnl.totalHitTF);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(missLbl, strikeLbl, totalMissLbl, totalHitLbl, missTF, strikeTF, totalMissTF, totalHitTF);
-    }
 }
