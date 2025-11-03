@@ -123,6 +123,31 @@ public class BattleshipGame
     public void generateFrame() {
         frame = new JFrame();
 
+        GridBagConstraints gbc1 = new GridBagConstraints();
+        gbc1.gridx = 0;
+        gbc1.gridy = 0;
+        gbc1.gridwidth = 1;
+        gbc1.gridheight = 1;
+        gbc1.fill = GridBagConstraints.BOTH;
+        GridBagConstraints gbc2 = new GridBagConstraints();
+        gbc2.gridx = 0;
+        gbc2.gridy = 1;
+        gbc2.gridwidth = 1;
+        gbc2.gridheight = 3;
+        gbc2.fill = GridBagConstraints.BOTH;
+        GridBagConstraints gbc3 = new GridBagConstraints();
+        gbc3.gridx = 0;
+        gbc3.gridy = 2;
+        gbc3.gridwidth = 1;
+        gbc3.gridheight = 1;
+        gbc3.fill = GridBagConstraints.BOTH;
+        GridBagConstraints gbc4 = new GridBagConstraints();
+        gbc4.gridx = 0;
+        gbc4.gridy = 3;
+        gbc4.gridwidth = 1;
+        gbc4.gridheight = 1;
+        gbc4.fill = GridBagConstraints.BOTH;
+
         //A JPanel that contains all other JPanels in the GUI
         JPanel mainPnl = new JPanel();
 
@@ -138,20 +163,20 @@ public class BattleshipGame
         //This int stores the width of the screen
         int screenWidth = screenSize.width;
 
-        mainPnl.setLayout(new GridLayout(4, 1));
+        mainPnl.setLayout(new GridBagLayout());
         frame.add(mainPnl);
 
         titlePnl = new TitlePnl();
-        mainPnl.add(titlePnl);
+        mainPnl.add(titlePnl, gbc1);
 
         boardPnl = new BoardPnl(this);
-        mainPnl.add(boardPnl);
+        mainPnl.add(boardPnl, gbc2);
 
         statusPnl = new StatusPnl();
-        mainPnl.add(statusPnl);
+        mainPnl.add(statusPnl, gbc3);
 
         controlPnl = new ControlPnl(this);
-        mainPnl.add(controlPnl);
+        mainPnl.add(controlPnl, gbc4);
 
         frame.setSize(screenWidth * 3/4, screenHeight * 3/4);
         frame.setLocationRelativeTo(null);
