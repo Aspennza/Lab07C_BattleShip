@@ -137,13 +137,13 @@ public class BattleshipGame
         gbc2.fill = GridBagConstraints.BOTH;
         GridBagConstraints gbc3 = new GridBagConstraints();
         gbc3.gridx = 0;
-        gbc3.gridy = 2;
+        gbc3.gridy = 4;
         gbc3.gridwidth = 1;
         gbc3.gridheight = 1;
         gbc3.fill = GridBagConstraints.BOTH;
         GridBagConstraints gbc4 = new GridBagConstraints();
         gbc4.gridx = 0;
-        gbc4.gridy = 3;
+        gbc4.gridy = 5;
         gbc4.gridwidth = 1;
         gbc4.gridheight = 1;
         gbc4.fill = GridBagConstraints.BOTH;
@@ -178,7 +178,7 @@ public class BattleshipGame
         controlPnl = new ControlPnl(this);
         mainPnl.add(controlPnl, gbc4);
 
-        frame.setSize(screenWidth * 3/4, screenHeight * 3/4);
+        frame.setSize(screenWidth, screenHeight);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("Battleship");

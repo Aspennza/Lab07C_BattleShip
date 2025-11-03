@@ -1,4 +1,7 @@
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,6 +18,7 @@ public class BoardPnl extends JPanel
     {
         this.game = game;
         setLayout(new GridLayout(10, 10));
+        setBorder(new CompoundBorder(new EtchedBorder(), new EmptyBorder(10, 10, 10, 10)));
 
         boardGUI = new BattleshipButton[10][10];
 

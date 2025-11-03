@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class BattleshipButton extends JButton
 {
@@ -48,6 +49,7 @@ public class BattleshipButton extends JButton
         hit = false;
         setIcon(blankIcon);
         setEnabled(true);
+        setBackground(new Color(116, 180, 214));
     }
 
     public void isMiss() {
@@ -55,7 +57,9 @@ public class BattleshipButton extends JButton
         blank = false;
         hit = false;
         setIcon(missIcon);
+        setDisabledIcon(missIcon);
         setEnabled(false);
+        setBackground(new Color(246, 225, 95));
     }
 
     public void isHit() {
@@ -63,6 +67,8 @@ public class BattleshipButton extends JButton
         miss = false;
         blank = false;
         setIcon(hitIcon);
+        setDisabledIcon(hitIcon);
         setEnabled(false);
+        setBackground(new Color(193, 20, 32));
     }
 }

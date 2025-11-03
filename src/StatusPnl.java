@@ -1,4 +1,7 @@
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.util.Objects;
 
@@ -16,6 +19,7 @@ public class StatusPnl extends JPanel
     public StatusPnl()
     {
         setLayout(new GridLayout(2, 4));
+        setBorder(new CompoundBorder(new EtchedBorder(), new EmptyBorder(10, 10, 10, 10)));
 
         missLbl = new JLabel("Misses:");
         strikeLbl = new JLabel("Strikes:");

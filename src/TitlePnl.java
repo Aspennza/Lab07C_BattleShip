@@ -1,4 +1,8 @@
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.util.Objects;
 
@@ -10,9 +14,11 @@ public class TitlePnl extends JPanel
     public TitlePnl()
     {
         titleLbl = new JLabel("Battleship");
+        setBorder(new CompoundBorder(new EtchedBorder(), new EmptyBorder(10, 10, 10, 10)));
         titleFont = new Font("Serif", Font.BOLD, 36);
         titleLbl.setFont(titleFont);
         add(titleLbl);
+
     }
 
     public JLabel getTitleLbl() {

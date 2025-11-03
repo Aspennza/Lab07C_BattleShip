@@ -1,4 +1,7 @@
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.Objects;
@@ -13,6 +16,7 @@ public class ControlPnl extends JPanel
     {
         this.game = game;
         setLayout(new GridLayout(1, 2));
+        setBorder(new CompoundBorder(new EtchedBorder(), new EmptyBorder(10, 10, 10, 10)));
 
         playAgainBtn = new JButton("Play Again");
         quitBtn = new JButton("Quit");
