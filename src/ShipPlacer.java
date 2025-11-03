@@ -138,11 +138,11 @@ public class ShipPlacer
         return Objects.hash(board, gen);
     }
 
-    @Override
-    public String toString() {
-        return "ShipPlacer{" +
-                "board=" + board +
-                ", gen=" + gen +
-                '}';
+    public BattleshipBoard getBoard() {
+        return board;
+    }
+
+    public Random getGen() {
+        return gen;
     }
 }
