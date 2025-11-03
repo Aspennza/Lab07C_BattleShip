@@ -43,6 +43,18 @@ public class BattleshipButton extends JButton
         return hit;
     }
 
+    public ImageIcon getBlankIcon() {
+        return blankIcon;
+    }
+
+    public ImageIcon getMissIcon() {
+        return missIcon;
+    }
+
+    public ImageIcon getHitIcon() {
+        return hitIcon;
+    }
+
     public void isBlank() {
         blank = true;
         miss = false;

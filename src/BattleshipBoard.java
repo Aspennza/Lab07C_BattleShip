@@ -102,13 +102,6 @@ public class BattleshipBoard
     }
 
     @Override
-    public String toString() {
-        return "BattleshipBoard{" +
-                "board=" + Arrays.toString(board) +
-                '}';
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         BattleshipBoard that = (BattleshipBoard) o;
