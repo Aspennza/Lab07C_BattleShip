@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-//replace the frame with a gridbaglayout!
 //test the program!
 //junit tests!
 //javadoc
@@ -44,6 +43,7 @@ public class BattleshipGame
         placer.placeShip(ship3);
         placer.placeShip(ship4);
         placer.placeShip(ship5);
+        JOptionPane.showMessageDialog(frame, "Welcome to Battleship! In this game, you click on empty tiles (represented by blue wave icons) to try to sink your opponent's ships.\nIf you miss a ship, a yellow splash icon appears. If you hit it, a red explosion icon appears. If you miss 5 times in a row, you get a strike, \nand if you get three strikes, the game is over. If you hit all 5 of your enemy's ships before getting three strikes, you win!");
     }
 
     public void buttonAction(int row, int col)
