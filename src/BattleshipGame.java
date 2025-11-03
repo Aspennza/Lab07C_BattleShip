@@ -312,6 +312,34 @@ public class BattleshipGame
         return ship5Sunk;
     }
 
+    public void setBoard(BattleshipBoard board) {
+        this.board = board;
+    }
+
+    public void setStrikes(int strikes) {
+        this.strikes = strikes;
+    }
+
+    public void setShip1Sunk(boolean ship1Sunk) {
+        this.ship1Sunk = ship1Sunk;
+    }
+
+    public void setShip2Sunk(boolean ship2Sunk) {
+        this.ship2Sunk = ship2Sunk;
+    }
+
+    public void setShip3Sunk(boolean ship3Sunk) {
+        this.ship3Sunk = ship3Sunk;
+    }
+
+    public void setShip4Sunk(boolean ship4Sunk) {
+        this.ship4Sunk = ship4Sunk;
+    }
+
+    public void setShip5Sunk(boolean ship5Sunk) {
+        this.ship5Sunk = ship5Sunk;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
