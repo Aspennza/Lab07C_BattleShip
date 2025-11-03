@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
-//test the program!
 //junit tests!
 //javadoc
 //crc cards
@@ -60,36 +59,10 @@ public class BattleshipGame
                      statusPnl.getTotalHitTF().setText("" + totalHits);
                      statusPnl.getMissTF().setText("" + misses);
                      boardPnl.getBoardGUI()[row][col].isHit();
-                     if (board.checkIfSunk(2, 6, row, col))
-                     {
-                         JOptionPane.showMessageDialog(frame, "Congrats! You sunk the opponent's 2-tile ship!");
-                         ship5Sunk = true;
-                     }
 
-                     if (board.checkIfSunk(3, 7, row, col)) {
-                         JOptionPane.showMessageDialog(frame, "Congrats! You sunk one of the opponent's 3-tile ships!");
-                         ship3Sunk = true;
-                     }
+                     checkShipsSunk(row, col);
 
-                     if(board.checkIfSunk(3, 10, row, col)) {
-                         JOptionPane.showMessageDialog(frame, "Congrats! You sunk one of the opponent's 3-tile ships!");
-                         ship4Sunk = true;
-                     }
-
-                     if (board.checkIfSunk(4, 8, row, col)) {
-                         JOptionPane.showMessageDialog(frame, "Congrats! You sunk the opponent's 4-tile ship!");
-                         ship2Sunk = true;
-                     }
-                     if (board.checkIfSunk(5, 9, row, col)) {
-                         JOptionPane.showMessageDialog(frame, "Congrats! You sunk the opponent's 5-tile ship!");
-                         ship1Sunk = true;
-                     }
-
-                     if(ship1Sunk && ship2Sunk && ship3Sunk && ship4Sunk && ship5Sunk)
-                     {
-                         playing = false;
-                         JOptionPane.showMessageDialog(frame, "Congratulations! You sunk all of the opponent's ships! You win! Click Play Again to replay.");
-                     }
+                     checkWin();
                  }else {
                      boardPnl.getBoardGUI()[row][col].isMiss();
                      misses++;
@@ -105,10 +78,7 @@ public class BattleshipGame
                          statusPnl.getMissTF().setText("" + misses);
                      }
 
-                     if(strikes == 3) {
-                         playing = false;
-                         JOptionPane.showMessageDialog(frame, "Game over! You reached three strikes before sinking the opponent's ships. Press Play Again to replay!");
-                     }
+                     checkLose();
                  }
             } else
             {
@@ -117,6 +87,48 @@ public class BattleshipGame
         } else
         {
             JOptionPane.showMessageDialog(frame, "The game is over. Select Play Again to replay!");
+        }
+    }
+
+    public void checkShipsSunk(int row, int col) {
+        if (board.checkIfSunk(2, 6, row, col))
+        {
+            JOptionPane.showMessageDialog(frame, "Congrats! You sunk the opponent's 2-tile ship!");
+            ship5Sunk = true;
+        }
+
+        if (board.checkIfSunk(3, 7, row, col)) {
+            JOptionPane.showMessageDialog(frame, "Congrats! You sunk one of the opponent's 3-tile ships!");
+            ship3Sunk = true;
+        }
+
+        if(board.checkIfSunk(3, 10, row, col)) {
+            JOptionPane.showMessageDialog(frame, "Congrats! You sunk one of the opponent's 3-tile ships!");
+            ship4Sunk = true;
+        }
+
+        if (board.checkIfSunk(4, 8, row, col)) {
+            JOptionPane.showMessageDialog(frame, "Congrats! You sunk the opponent's 4-tile ship!");
+            ship2Sunk = true;
+        }
+        if (board.checkIfSunk(5, 9, row, col)) {
+            JOptionPane.showMessageDialog(frame, "Congrats! You sunk the opponent's 5-tile ship!");
+            ship1Sunk = true;
+        }
+    }
+
+    public void checkWin() {
+        if(ship1Sunk && ship2Sunk && ship3Sunk && ship4Sunk && ship5Sunk)
+        {
+            playing = false;
+            JOptionPane.showMessageDialog(frame, "Congratulations! You sunk all of the opponent's ships! You win! Click Play Again to replay.");
+        }
+    }
+
+    public void checkLose() {
+        if(strikes == 3) {
+            playing = false;
+            JOptionPane.showMessageDialog(frame, "Game over! You reached three strikes before sinking the opponent's ships. Press Play Again to replay!");
         }
     }
 
