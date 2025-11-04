@@ -4,9 +4,13 @@ import org.junit.jupiter.api.Test;
 import javax.swing.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Tests the basic functionality of the methods in the BattleshipButton.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class BattleshipButtonTest {
 
+    //A BattleshipButton for testing the functionality of the methods
     BattleshipButton button1;
 
     @BeforeEach

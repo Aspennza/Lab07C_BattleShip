@@ -3,10 +3,19 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the basic functionality of the methods in the Ship.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class ShipTest {
 
+    //A Ship for testing the methods
     Ship ship1;
+
+    //A Ship for testing the methods
     Ship ship2;
+
+    //A Ship for testing the methods
     Ship ship3;
 
     @BeforeEach

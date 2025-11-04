@@ -5,13 +5,28 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the basic functionality of the methods in the ShipPlacer.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class ShipPlacerTest {
 
+    //A ShipPlacer for testing the methods
     ShipPlacer placer;
+
+    //A ShipPlacer for testing the methods
     ShipPlacer placer2;
+
+    //A Ship for testing the methods
     Ship ship1;
+
+    //A Ship for testing the methods
     Ship ship2;
+
+    //A BattleshipBoard for testing the methods
     BattleshipBoard board;
+
+    //A BattleshipBoard for testing the methods
     BattleshipBoard board2;
 
     @BeforeEach

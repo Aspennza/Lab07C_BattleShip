@@ -1,8 +1,15 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the basic functionality of the methods in the BattleshipBoard.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class BattleshipBoardTest {
 
+    //A BattleshipBoard object for testing the methods
     BattleshipBoard board1;
+
+    //A BattleshipBoard object for testing the methods
     BattleshipBoard board2;
 
     @org.junit.jupiter.api.BeforeEach

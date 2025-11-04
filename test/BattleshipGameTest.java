@@ -5,9 +5,16 @@ import javax.swing.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the basic functionality of the methods in the BattleshipGame.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class BattleshipGameTest {
 
+    //A BattleshipGame for testing the methods
     BattleshipGame game1;
+
+    //A BattleshipGame for testing the methods
     BattleshipGame game2;
 
     @BeforeEach

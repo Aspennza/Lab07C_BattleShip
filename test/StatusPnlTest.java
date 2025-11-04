@@ -5,8 +5,13 @@ import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the basic functionality of the methods in the StatusPnl.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class StatusPnlTest {
 
+    //A StatusPnl for testing the methods
     StatusPnl pnl;
 
     @BeforeEach

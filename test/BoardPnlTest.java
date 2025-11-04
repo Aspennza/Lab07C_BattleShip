@@ -7,9 +7,16 @@ import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the basic functionality of the methods in the BoardPnl.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class BoardPnlTest {
 
+    //A BattleshipGame for testing the methods
     BattleshipGame game;
+
+    //A BoardPnl for testing the methods
     BoardPnl pnl;
 
     @BeforeEach

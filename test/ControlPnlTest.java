@@ -5,9 +5,16 @@ import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the basic functionality of the methods in the ControlPnl.java class.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 class ControlPnlTest {
 
+    //A ControlPnl for testing the methods
     ControlPnl pnl;
+
+    //A BattleshipGame for testing the methods
     BattleshipGame game;
 
     @BeforeEach
