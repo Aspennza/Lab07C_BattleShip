@@ -54,7 +54,7 @@ public class ControlPnl extends JPanel
         add(quitBtn);
         quitBtn.addActionListener((ActionEvent ae) -> {
             //This int tracks whether the user confirmed or denied they wanted to quit the program
-            int selection = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit?", "Quit", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            int selection = JOptionPane.showConfirmDialog(null, "Are you sure you want to quit? You can press Play Again to replay.", "Quit", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
             //This algorithm determines whether to quit the program based on the user's input
             if(selection == JOptionPane.YES_OPTION) {
