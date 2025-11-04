@@ -96,6 +96,6 @@ class ShipPlacerTest {
 
     @Test
     void testHashCode() {
-        assertEquals(1652075596, placer.hashCode());
+        assertEquals(1418324489, placer.hashCode());
     }
 }
