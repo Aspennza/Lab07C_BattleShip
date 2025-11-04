@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.Objects;
 
 /**
- * Allowws the creation of pre-designed JPanel objects for the status panel of a Battleship program.
+ * Allows the creation of pre-designed JPanel objects for the status panel of a Battleship program.
  * Contains a number of JLabels and text fields for outputting misses, strikes, hits, etc. Also contains
  * methods for acting on StatusPnl objects.
  * @author Zoe Aspenns aspennza@mail.uc.edu
