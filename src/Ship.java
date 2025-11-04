@@ -1,8 +1,17 @@
 import java.util.Objects;
 
+/**
+ * Allows the creation of ship objects for storing a battleship's
+ * length and unique ID. Also includes functions for acting on
+ * and comparing ships.
+ * @author Zoe Aspenns aspennza@mail.uc.edu
+ */
 public class Ship
 {
+    //This int stores the length of the ship
     private int length;
+
+    //This double stores the ship's unique ID
     private double ID;
 
     public Ship(int length, double ID)
